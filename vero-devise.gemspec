@@ -6,10 +6,10 @@ require 'vero/devise/version'
 Gem::Specification.new do |spec|
   spec.name          = "vero-devise"
   spec.version       = Vero::Devise::VERSION
-  spec.authors       = ["Estevão Mascarenhas"]
-  spec.email         = ["estevao.am@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.authors       = ["Estevão Mascarenhas", "Vinicius Negrisolo"]
+  spec.email         = ["estevao.am@gmail.com", "vinicius.negrisolo@gmail.com"]
+  spec.summary       = %q{Replace Devise transactional emails with Vero events.}
+  spec.description   = %q{Replace Devise transactional emails with Vero events.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec", "~> 3.1"
 end
