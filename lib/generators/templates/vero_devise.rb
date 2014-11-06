@@ -1,5 +1,9 @@
 VeroDevise.config do |c|
-  c.confirmation_event = :event
-  c.reset_password_event = :event
-  c.unlock_event = :event
+  # Emails sent by devise
+  c.confirmation_event = :confirmation_instructions
+  c.reset_password_event = :reset_password_instructions
+  c.unlock_event = :unlock_instructions
+
+  # Send email beside sending the Vero event tracking?
+  c.send_transactional_email = false
 end

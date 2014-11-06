@@ -2,6 +2,8 @@
 
 Replace transaction emails sent by `devise` with Vero events
 
+Tested with devise ~3.4
+
 ## Installation
 
 Add this line to your application's Gemfile:
