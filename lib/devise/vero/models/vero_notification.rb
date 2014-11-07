@@ -1,9 +1,13 @@
+require 'active_support/concern'
+
 module Devise
   module Vero
     module Models
 
       module VeroNotification
         extend ActiveSupport::Concern
+
+        protected
 
         # This method overwrites devise's own `send_devise_notification`
         # to capture all email notifications and send the
