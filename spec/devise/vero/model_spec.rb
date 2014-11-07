@@ -1,5 +1,4 @@
 require 'spec_helper'
-require "pry"
 
 describe Devise::Vero::Models::VeroNotification do
   let(:klass) do

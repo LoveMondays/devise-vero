@@ -2,6 +2,8 @@ require 'active_support/dependencies'
 
 module Devise
   module Vero
+    autoload :Sender, 'devise/vero/sender'
+
     module Models
       autoload :VeroNotification, 'devise/vero/model'
     end
