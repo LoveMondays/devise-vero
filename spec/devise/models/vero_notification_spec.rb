@@ -1,35 +1,71 @@
 require 'spec_helper'
+require "pry"
 
 describe Devise::Vero::Models::VeroNotification do
-  let(:klass) { Class.new }
+  let(:klass) do
+    class TestClass
+      prepend Devise::Vero::Models::VeroNotification
 
-  before do
-    klass.include described_class
+      protected
 
-    klass.class_eval do
-      def send_devise_notification(*args)
+      def send_devise_notification(notification, *args)
         nil
       end
 
-      def send_devise_pending_notifications(*args)
+      def send_devise_pending_notifications
         nil
       end
 
       def changed?
         false
       end
+
+      def send_to_vero
+        nil
+      end
     end
+
+    TestClass
   end
 
   subject { klass.new }
 
   context "#send_devise_notification" do
-    it "returns nil if config is disabled" do
-      allow(Devise::Vero).to receive(:enabled).and_return(false)
-      allow(subject).to receive(:change?).and_return(false)
+    context "Devise::Vero is disabled" do
+      it "doesn't send to vero if config is disabled" do
+        allow(Devise::Vero).to receive(:disabled).and_return(true)
+        allow(subject).to receive(:send_to_vero)
 
-      expect(subject.send(:send_devise_notification, nil)).to be_nil
-      expect(subject).to_not have_received(:change?)
+        expect(subject.send(:send_devise_notification, nil)).to be_nil
+        expect(subject).to_not have_received(:send_to_vero)
+      end
+    end
+
+    context "Devise::Vero is enabled" do
+      it "does send to vero if config is disabled" do
+        allow(Devise::Vero).to receive(:disabled).and_return(false)
+        allow(subject).to receive(:send_to_vero)
+
+        expect(subject.send(:send_devise_notification, nil)).to be_nil
+        expect(subject).to have_received(:send_to_vero)
+      end
+
+      context "valid call" do
+        let(:token) { SecureRandom.hex }
+
+        before do
+          allow(subject).to receive(:changed?).and_return(false)
+          allow(Devise::Vero).to receive(:disabled).and_return(false)
+        end
+
+        it "calls `send_to_vero`" do
+          allow(subject).to receive(:send_to_vero)
+
+          subject.send(:send_devise_notification, token)
+
+          expect(subject).to have_received(:send_to_vero)
+        end
+      end
     end
   end
 end
