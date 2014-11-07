@@ -19,5 +19,9 @@ module Devise
     def self.config
       yield self
     end
+
   end
 end
+
+# Register devise-async model in Devise
+Devise.add_module(:vero, model: 'devise/vero/model')
