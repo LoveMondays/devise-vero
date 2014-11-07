@@ -58,12 +58,12 @@ describe Devise::Vero::Models::VeroNotification do
           allow(Devise::Vero).to receive(:disabled).and_return(false)
         end
 
-        it "calls `send_to_vero`" do
+        it "calls `send_to_vero` method" do
           allow(subject).to receive(:send_to_vero)
 
-          subject.send(:send_devise_notification, token)
+          subject.send(:send_devise_notification, :test, token)
 
-          expect(subject).to have_received(:send_to_vero)
+          expect(subject).to have_received(:send_to_vero).with(:test, token)
         end
       end
     end
