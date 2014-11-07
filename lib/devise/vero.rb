@@ -3,7 +3,7 @@ require 'active_support/dependencies'
 module Devise
   module Vero
     module Models
-      autoload :VeroNotification, 'devise/vero/models/vero_notification'
+      autoload :VeroNotification, 'devise/vero/model'
     end
 
     mattr_accessor :confirmation_event,
