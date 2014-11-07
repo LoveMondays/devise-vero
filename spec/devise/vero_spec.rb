@@ -10,4 +10,10 @@ describe Devise::Vero do
       expect(described_class.confirmation_event).to eq(:test)
     end
   end
+
+  context ".disabled" do
+    it "is false by default" do
+      expect(described_class.disabled).to be_falsy
+    end
+  end
 end

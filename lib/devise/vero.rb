@@ -5,16 +5,13 @@ module Devise
     mattr_accessor :confirmation_event,
       :reset_password_event,
       :unlock_event,
-      :send_transactional_email
+      :send_transactional_email,
+      :disabled
 
-    @@send_transactional_email = false
+    @@disabled = false
 
     def self.config
       yield self
-    end
-
-    def send_transactional_email?
-      @@send_transactional_email
     end
   end
 end
