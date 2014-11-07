@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'vero_devise/version'
+require 'devise/vero/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "vero-devise"
-  spec.version       = VeroDevise::VERSION
+  spec.version       = Devise::Vero::VERSION
   spec.authors       = ["Estevão Mascarenhas", "Vinicius Negrisolo"]
   spec.email         = ["estevao.am@gmail.com", "vinicius.negrisolo@gmail.com"]
   spec.summary       = %q{Replace Devise transactional emails with Vero events.}
