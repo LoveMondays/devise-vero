@@ -1,4 +1,4 @@
-VeroDevise.config do |c|
+Devise::Vero.config do |c|
   # Send email beside sending the Vero event tracking?
   c.send_transactional_email = false
 
