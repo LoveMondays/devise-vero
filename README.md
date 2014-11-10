@@ -1,4 +1,4 @@
-# vero-devise
+# devise-vero
 
 Replace transaction emails sent by `devise` with Vero events
 
@@ -9,7 +9,7 @@ Tested with devise ~3.4
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'vero-devise'
+gem 'devise-vero'
 ```
 
 ## Usage
