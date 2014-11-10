@@ -12,7 +12,11 @@ Add this line to your application's Gemfile:
 gem 'devise-vero'
 ```
 
-Run `bundle install` and that's it.
+Run `bundle install`, and then run:
+
+    rails generate devise:vero:install
+
+To copy the default configuration file to your initializers directory.
 
 ## Usage
 
