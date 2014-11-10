@@ -10,10 +10,7 @@ module Devise
       autoload :VeroNotification, 'devise/vero/model'
     end
 
-    mattr_accessor :confirmation_event,
-                   :reset_password_event,
-                   :unlock_event,
-                   :send_transactional_email,
+    mattr_accessor :send_transactional_email,
                    :disabled
 
     @@disabled = false

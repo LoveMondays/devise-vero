@@ -4,10 +4,10 @@ describe Devise::Vero do
   context '.config' do
     it 'sets the accessor for an attribute' do
       described_class.config do |c|
-        c.confirmation_event = :test
+        c.disabled = false
       end
 
-      expect(described_class.confirmation_event).to eq(:test)
+      expect(described_class.disabled).to be_falsy
     end
   end
 
