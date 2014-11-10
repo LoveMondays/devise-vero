@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'devise/vero/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "vero-devise"
+  spec.name          = "devise-vero"
   spec.version       = Devise::Vero::VERSION
   spec.authors       = ["Estevão Mascarenhas", "Vinicius Negrisolo"]
   spec.email         = ["estevao.am@gmail.com", "vinicius.negrisolo@gmail.com"]
