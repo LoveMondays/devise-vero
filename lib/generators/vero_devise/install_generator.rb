@@ -3,6 +3,7 @@ require 'securerandom'
 
 module VeroDevise
   module Generators
+    # InstallGenerator create the conf to Devise integration with Vero
     class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path('../../templates', __FILE__)
 

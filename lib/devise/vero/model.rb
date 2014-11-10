@@ -10,15 +10,15 @@ module Devise
         def send_devise_notification(notification, *args)
           super if Devise::Vero.send_transactional_email
 
-          unless Devise::Vero.disabled
-            # If the record is dirty
-            # we keep pending notifications to be enqueued
-            # by the callback and avoid before commit
-            if changed?
-              devise_pending_notifications << [notification, args]
-            else
-              send_to_vero(notification, *args)
-            end
+          return if Devise::Vero.disabled
+
+          # If the record is dirty
+          # we keep pending notifications to be enqueued
+          # by the callback and avoid before commit
+          if changed?
+            devise_pending_notifications << [notification, args]
+          else
+            send_to_vero(notification, *args)
           end
         end
 
