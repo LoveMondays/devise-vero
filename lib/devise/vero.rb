@@ -1,9 +1,11 @@
 require 'active_support/dependencies'
 
 module Devise
+  # Vero module for sending Devise emails through Vero
   module Vero
     autoload :Sender, 'devise/vero/sender'
 
+    # Models module
     module Models
       autoload :VeroNotification, 'devise/vero/model'
     end

@@ -1,5 +1,6 @@
 module Devise
   module Vero
+    # Sender class
     class Sender
       attr_reader :notification, :instance, :token, :args
 

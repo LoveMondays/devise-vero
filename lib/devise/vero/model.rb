@@ -1,6 +1,7 @@
 module Devise
   module Vero
     module Models
+      # VeroNotification module
       module VeroNotification
         protected
 
