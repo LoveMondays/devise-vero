@@ -1,9 +1,10 @@
 require 'spec_helper'
+require 'pry'
 
-describe Devise::Vero::Models::VeroNotification do
+describe Devise::Models::Vero do
   let(:klass) do
     class TestClass
-      prepend Devise::Vero::Models::VeroNotification
+      prepend Devise::Models::Vero
 
       protected
 

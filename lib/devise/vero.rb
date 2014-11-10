@@ -1,17 +1,18 @@
 require 'active_support/dependencies'
+require 'active_support/concern'
 
 module Devise
+  # Models module
+  module Models
+    autoload :Vero, 'devise/vero/model'
+  end
+
   # Vero module for sending Devise emails through Vero
   module Vero
     autoload :Sender, 'devise/vero/sender'
 
-    # Models module
-    module Models
-      autoload :VeroNotification, 'devise/vero/model'
-    end
-
     mattr_accessor :send_transactional_email,
-                   :disabled
+      :disabled
 
     @@disabled = false
 
