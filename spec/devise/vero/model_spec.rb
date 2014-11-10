@@ -29,9 +29,9 @@ describe Devise::Vero::Models::VeroNotification do
 
   subject { klass.new }
 
-  context "#send_devise_notification" do
-    context "Devise::Vero is disabled" do
-      it "doesn't send to vero if config is disabled" do
+  context '#send_devise_notification' do
+    context 'Devise::Vero is disabled' do
+      it 'doesn\'t send to vero if config is disabled' do
         allow(Devise::Vero).to receive(:disabled).and_return(true)
         allow(subject).to receive(:send_to_vero)
 
@@ -40,8 +40,8 @@ describe Devise::Vero::Models::VeroNotification do
       end
     end
 
-    context "Devise::Vero is enabled" do
-      it "does send to vero if config is disabled" do
+    context 'Devise::Vero is enabled' do
+      it 'does send to vero if config is disabled' do
         allow(Devise::Vero).to receive(:disabled).and_return(false)
         allow(subject).to receive(:send_to_vero)
 
@@ -49,7 +49,7 @@ describe Devise::Vero::Models::VeroNotification do
         expect(subject).to have_received(:send_to_vero)
       end
 
-      context "valid call" do
+      context 'valid call' do
         let(:token) { SecureRandom.hex }
 
         before do
@@ -57,7 +57,7 @@ describe Devise::Vero::Models::VeroNotification do
           allow(Devise::Vero).to receive(:disabled).and_return(false)
         end
 
-        it "calls `send_to_vero` method" do
+        it 'calls `send_to_vero` method' do
           allow(subject).to receive(:send_to_vero)
 
           subject.send(:send_devise_notification, :test, token)

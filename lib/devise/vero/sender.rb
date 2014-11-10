@@ -1,6 +1,6 @@
 module Devise
   module Vero
-
+    # Sender class
     class Sender
       attr_reader :notification, :instance, :token, :args
 
@@ -13,12 +13,8 @@ module Devise
 
       # Actually send the event to Vero
       def deliver
-        instance.track!(notification, {
-          token: token,
-          data: args
-        })
+        instance.track!(notification, token: token, data: args)
       end
     end
-
   end
 end
