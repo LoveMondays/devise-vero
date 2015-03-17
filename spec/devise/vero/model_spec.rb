@@ -3,30 +3,10 @@ require 'pry'
 
 describe Devise::Models::Vero do
   let(:klass) do
-    # Test class
-    class TestClass
-      prepend Devise::Models::Vero
-
-      protected
-
-      def send_devise_notification(*)
-        nil
-      end
-
-      def send_devise_pending_notifications
-        nil
-      end
-
-      def changed?
-        false
-      end
-
-      def send_to_vero
-        nil
-      end
+    Class.new do
+      include ActiveModel::Dirty
+      include Devise::Models::Vero
     end
-
-    TestClass
   end
 
   subject { klass.new }
