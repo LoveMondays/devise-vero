@@ -6,11 +6,20 @@ require 'devise/vero/version'
 Gem::Specification.new do |spec|
   spec.name          = 'devise-vero'
   spec.version       = Devise::Vero::VERSION
-  spec.authors       = ['Estevão Mascarenhas', 'Vinicius Negrisolo']
-  spec.email         = ['estevao.am@gmail.com', 'vinicius.negrisolo@gmail.com']
+  spec.platform      = Gem::Platform::RUBY
+  spec.authors       = [
+    'Estevão Mascarenhas',
+    'Vinicius Negrisolo',
+    "Shane O'Grady"
+  ]
+  spec.email         = [
+    'estevao.am@gmail.com',
+    'vinicius.negrisolo@gmail.com',
+    'shane@ogrady.ie'
+  ]
   spec.summary       = 'Replace Devise transactional emails with Vero events.'
   spec.description   = 'Replace Devise transactional emails with Vero events.'
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/LoveMondays/devise-vero'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -25,4 +34,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.1'
   spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'codeclimate-test-reporter'
 end
