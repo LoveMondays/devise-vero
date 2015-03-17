@@ -3,12 +3,13 @@ require 'pry'
 
 describe Devise::Models::Vero do
   let(:klass) do
+    # Test class
     class TestClass
       prepend Devise::Models::Vero
 
       protected
 
-      def send_devise_notification(notification, *args)
+      def send_devise_notification(*)
         nil
       end
 
@@ -32,7 +33,7 @@ describe Devise::Models::Vero do
 
   context '#send_devise_notification' do
     context 'Devise::Vero is disabled' do
-      it 'doesn\'t send to vero if config is disabled' do
+      it "doesn't send to vero if config is disabled" do
         allow(Devise::Vero).to receive(:disabled).and_return(true)
         allow(subject).to receive(:send_to_vero)
 

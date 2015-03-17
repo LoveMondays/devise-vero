@@ -11,10 +11,9 @@ module Devise
   module Vero
     autoload :Sender, 'devise/vero/sender'
 
-    mattr_accessor :send_transactional_email,
-      :disabled
+    mattr_accessor :send_transactional_email, :disabled
 
-    @@disabled = false
+    @disabled = false
 
     def self.config
       yield self

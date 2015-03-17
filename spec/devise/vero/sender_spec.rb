@@ -2,12 +2,10 @@ require 'spec_helper'
 
 describe Devise::Vero::Sender do
   context 'initializing' do
-
     it 'populate the token attribute with the first arg' do
       instance = described_class.new(:test, nil, 2, 3, 4)
       expect(instance.token).to eq(2)
     end
-
   end
 
   describe '#deliver' do
