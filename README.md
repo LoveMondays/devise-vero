@@ -1,6 +1,11 @@
 # devise-vero
 
-Replace transaction emails sent by `devise` with Vero events
+[![Build Status](https://travis-ci.org/LoveMondays/devise-vero.svg)](https://travis-ci.org/LoveMondays/devise-vero)
+[![Code Climate](https://codeclimate.com/github/LoveMondays/devise-vero/badges/gpa.svg)](https://codeclimate.com/github/LoveMondays/devise-vero)
+[![Test Coverage](https://codeclimate.com/github/LoveMondays/devise-vero/badges/coverage.svg)](https://codeclimate.com/github/LoveMondays/devise-vero)
+[![Dependency Status](https://gemnasium.com/LoveMondays/devise-vero.svg)](https://gemnasium.com/LoveMondays/devise-vero)
+
+Replace transaction emails sent by [Devise](https://github.com/plataformatec/devise) with [Vero](http://www.getvero.com) events.
 
 Tested with devise ~3.4
 

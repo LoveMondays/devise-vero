@@ -1,0 +1,16 @@
+language: ruby
+cache: bundler
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1
+  - 2.2
+  - ruby-head
+git:
+  depth: 1
+script:
+  - bundle exec rspec
+  - bundle exec rubocop
+addons:
+  code_climate:
+    repo_token: 51a6e0e84ef782cfb3ebebcdab36d9caeec07af803477d948f9c23efbf058c43
