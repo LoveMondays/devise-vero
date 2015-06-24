@@ -10,12 +10,14 @@ Gem::Specification.new do |spec|
   spec.authors       = [
     'Estevão Mascarenhas',
     'Vinicius Negrisolo',
-    "Shane O'Grady"
+    "Shane O'Grady",
+    'Rubens Minoru Andako Bueno'
   ]
   spec.email         = [
     'estevao.am@gmail.com',
     'vinicius.negrisolo@gmail.com',
-    'shane@ogrady.ie'
+    'shane@ogrady.ie',
+    'rubensmabueno@hotmail.com'
   ]
   spec.summary       = 'Replace Devise transactional emails with Vero events.'
   spec.description   = 'Replace Devise transactional emails with Vero events.'

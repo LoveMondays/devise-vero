@@ -5,7 +5,9 @@
 [![Test Coverage](https://codeclimate.com/github/LoveMondays/devise-vero/badges/coverage.svg)](https://codeclimate.com/github/LoveMondays/devise-vero)
 [![Dependency Status](https://gemnasium.com/LoveMondays/devise-vero.svg)](https://gemnasium.com/LoveMondays/devise-vero)
 
-Replace transaction emails sent by [Devise](https://github.com/plataformatec/devise) with [Vero](http://www.getvero.com) events.
+Add Vero support for an ActiveRecord object.
+- Replace transaction emails sent by [Devise](https://github.com/plataformatec/devise) with [Vero](http://www.getvero.com) events.
+- Unsubscribe the user once it's deleted from application.
 
 Tested with devise ~3.4
 
