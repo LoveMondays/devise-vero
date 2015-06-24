@@ -1,16 +1,26 @@
 language: ruby
 cache: bundler
 rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1
-  - 2.2
-  - ruby-head
+- 1.9.3
+- 2.0.0
+- 2.1
+- 2.2
+- ruby-head
 git:
   depth: 1
 script:
-  - bundle exec rspec
-  - bundle exec rubocop
+- bundle exec rspec
+- bundle exec rubocop
 addons:
   code_climate:
-    repo_token: 51a6e0e84ef782cfb3ebebcdab36d9caeec07af803477d948f9c23efbf058c43
+    repo_token:
+      secure: "SLy9NKyJIytObIBzNckKlihcyrQR1XuV32l0m2aSsMFXIAHJsjoRrsR/Q0UUlG6oEZG3fgTax5Zj1SQRigYvz1pGQltRVMyOD7GONpFyGDBZ7OYNgG97JzExnt8Il6IMADNHXhp3q/iY+3GU18rHKI6aUa9A1Ut5NjxhSczSprU="
+deploy:
+  provider: rubygems
+  api_key:
+    secure: UgZ3RapfHOWwLrtc4kdsHGhQ0bXDluxVDcdRU9qjSSrqEaWLPV0PtBUyMuDipmSGiVGcO68l0hEfSdSistXxNqXLN2daG7kRN7nBEX2nuIDSsCLPR7auz09XlYkTk5BN9xQoCm/WYTRFItAPkKTKXLC43RhiA4c5zyFisGoCAIg=
+  gem: devise-vero
+  on:
+    tags: true
+    repo: LoveMondays/devise-vero
+    branch: master
