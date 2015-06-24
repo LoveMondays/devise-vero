@@ -5,6 +5,7 @@ describe Devise::Models::Vero do
   let(:klass) do
     Class.new do
       include ActiveModel::Dirty
+      include ActiveRecord::Callbacks
       include Devise::Models::Vero
     end
   end

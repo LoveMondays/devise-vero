@@ -1,8 +1,14 @@
+require 'vero'
+
 module Devise
   module Models
     # VeroNotification module
     module Vero
       extend ActiveSupport::Concern
+
+      included do
+        before_destroy :unsubscribe_user
+      end
 
       protected
 
@@ -37,8 +43,16 @@ module Devise
         @devise_pending_notifications ||= []
       end
 
+      def unsubscribe_user
+        vero_sender.unsubscribe
+      end
+
       def send_to_vero(notification, *args)
-        Devise::Vero::Sender.new(notification, self, *args).deliver
+        vero_sender.deliver(notification, *args)
+      end
+
+      def vero_sender
+        @vero_sender ||= Devise::Vero::Sender.new(self)
       end
     end
   end
