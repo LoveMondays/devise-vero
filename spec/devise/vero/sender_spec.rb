@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Devise::Vero::Sender do
   describe '#deliver' do
-    let(:instance) { (Class.new).new }
+    let(:instance) { Class.new.new }
     let(:token) { SecureRandom.hex }
     let(:notification) { :confirmation_instructions }
 
@@ -17,7 +17,7 @@ describe Devise::Vero::Sender do
   end
 
   describe '#unsubscribe' do
-    let(:instance) { (Class.new).new }
+    let(:instance) { Class.new.new }
     let(:vero_context) { Vero::Context.new }
 
     subject { described_class.new(instance) }

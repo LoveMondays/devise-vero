@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
     "Shane O'Grady",
     'Rubens Minoru Andako Bueno'
   ]
-  spec.email         = [
+  spec.email = [
     'estevao.am@gmail.com',
     'vinicius.negrisolo@gmail.com',
     'shane@ogrady.ie',
@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'rails', '~> 4.1'
-  spec.add_dependency 'devise', '~> 3.2'
+  spec.add_dependency 'devise', '>= 3.2'
   spec.add_dependency 'vero'
   spec.add_development_dependency 'bundler', '~> 1.7'
   spec.add_development_dependency 'rake', '~> 10.0'
