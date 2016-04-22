@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
     "Shane O'Grady",
     'Rubens Minoru Andako Bueno'
   ]
-  spec.email         = [
+  spec.email = [
     'estevao.am@gmail.com',
     'vinicius.negrisolo@gmail.com',
     'shane@ogrady.ie',
