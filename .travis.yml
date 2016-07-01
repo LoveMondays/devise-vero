@@ -1,9 +1,8 @@
 language: ruby
 cache: bundler
 rvm:
-- 2.1.8
 - 2.2.4
-- 2.3.0
+- 2.3.1
 - ruby-head
 git:
   depth: 1
